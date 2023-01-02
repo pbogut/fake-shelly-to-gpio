@@ -1,0 +1,11 @@
+[Unit]
+Description=Fake shelly handler
+After=buttons-init.service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=php -S 127.0.0.1:6622 -t /home/pi/fake-shelly-to-gpio/
+
+[Install]
+WantedBy=multi-user.target
